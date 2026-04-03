@@ -6,10 +6,11 @@ import json
 from typing import List, Dict, Optional
 import random
 from datetime import datetime, timedelta
+import os
 
 
 app = FastAPI()
-GOOGLE_API_KEY = "AIzaSyCiqmsQW7qY9JhAS5H2xZFglGl7n3R7hco"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-3-flash-preview')
 
